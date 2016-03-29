@@ -1,9 +1,25 @@
-class type touchid =
+(* -------------------------------------------------------------------------- *)
+class touchid : Ojs.t ->
   object
-    method authenticate : (unit -> unit) -> (unit -> unit) -> Js.js_string Js.t
-    -> unit Js.meth
-    method checkSupport : (unit -> unit) -> (Js.js_string Js.t -> unit) -> unit
-    Js.meth
-  end
+    inherit Ojs.obj
+    (* ---------------------------------------------------------------------- *)
+    method authenticate   : (unit -> unit)    -> (* success_cb *)
+                            (unit -> unit)    -> (* error_cb if authentication
+                                                    fails *)
+                            string            -> (* text explaining why the
+                                                    application needs access *)
+                            unit
+    (* ---------------------------------------------------------------------- *)
 
-val touchid : unit -> touchid Js.t
+    (* ---------------------------------------------------------------------- *)
+    method check_support  : (unit -> unit)    -> (* success_cb *)
+                            (string -> unit)  -> (* error_cb *)
+                            unit
+    (* ---------------------------------------------------------------------- *)
+  end
+(* -------------------------------------------------------------------------- *)
+
+(* -------------------------------------------------------------------------- *)
+val t : unit -> touchid
+[@@js.get "touchid"]
+(* -------------------------------------------------------------------------- *)

@@ -38,11 +38,7 @@ See the official documentation
 The device plugin creates a new object called *touchid*, but the object is
 available when the *deviceready* event is handled.
 
-We don't provide a *touchid* variable in this plugin (as said in the official
-documentation on js_of_ocaml). If we did, *touchid* will be set to **undefined**
-because the *touchid* object doesn't exist when we create the variable.
-
-Instead, we provide a function *Touchid.t* of type unit -> Touchid.touchid
+We provide a function *Touchid.t* of type unit -> Touchid.touchid
 which does the binding when you call it.
 So, use
 

@@ -30,6 +30,28 @@ The js_of_ocaml version is available in the branch
 [*js_of_ocaml*](https://github.com/dannywillems/ocaml-cordova-plugin-touchid/tree/js_of_ocaml)
 but we **recommend** to use the gen_js_api version which is the master branch.
 
+## How to install and compile your project by using this plugin ?
+
+Don't forget to switch to a compiler **>= 4.03.0**.
+```Shell
+opam switch 4.03.0+beta1
+```
+
+You can use opam by pinning the repository with
+```Shell
+opam pin add cordova-plugin-touchid https://github.com/dannywillems/ocaml-cordova-plugin-touchid.git
+```
+
+and to compile your project, use
+```Shell
+ocamlfind ocamlc -c -o [output_file] -package gen_js_api -package cordova-plugin-touchid [...] -linkpkg [other arguments]
+```
+
+Don't forget to install the cordova plugin touchid with
+```Shell
+cordova plugin add cordova-plugin-touchid
+```
+
 ## How to use ?
 
 See the official documentation
@@ -40,13 +62,13 @@ See the official documentation
 The device plugin creates a new object called *touchid*, but the object is
 available when the *deviceready* event is handled.
 
-We provide a function *Touchid.t* of type unit -> Touchid.touchid
+We provide a function *Cordova_touchid.t* of type unit -> Cordova_touchid.touchid
 which does the binding when you call it.
 So, use
 
 ```OCaml
 let on_device_ready _ =
-  let t = Touchid.t () in
+  let t = Cordova_touchid.t () in
   (* Some code *)
 
 let _ =

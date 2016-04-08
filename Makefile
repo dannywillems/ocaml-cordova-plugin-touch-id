@@ -1,8 +1,4 @@
-################################################################################
-MLI_FILE		= cordova_touchid.mli
-## Name which will be used in -package with ocamlfind
-LIB_NAME		= cordova-plugin-touchid
-################################################################################
+include Makefile.conf
 
 ################################################################################
 CC				= ocamlc

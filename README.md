@@ -1,6 +1,7 @@
 # ocaml-cordova-plugin-touch-id
 
-* gen_js_api (master branch): [![Build Status](https://travis-ci.org/dannywillems/ocaml-cordova-plugin-touch-id.svg?branch=master)](https://travis-ci.org/dannywillems/ocaml-cordova-plugin-touch-id)
+[![LGPL-v3 licensed](https://img.shields.io/badge/license-LGPLv3-blue.svg)](https://raw.githubusercontent.com/dannywillems/ocaml-cordova-plugin-touch-id/master/LICENSE)
+[![Build Status](https://travis-ci.org/dannywillems/ocaml-cordova-plugin-touch-id.svg?branch=master)](https://travis-ci.org/dannywillems/ocaml-cordova-plugin-touch-id)
 
 Binding to
 [cordova-plugin-touch-id](https://github.com/apache/cordova-plugin-touchid)

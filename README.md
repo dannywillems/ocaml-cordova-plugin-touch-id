@@ -57,22 +57,3 @@ cordova plugin add cordova-plugin-touchid
 
 See the official documentation
 [cordova-plugin-touchid](https://github.com/leecrossley/cordova-plugin-touchid)
-
-## ! BE CAREFUL !
-
-The device plugin creates a new object called *touchid*, but the object is
-available when the *deviceready* event is handled.
-
-We provide a function *Cordova_touchid.t* of type unit -> Cordova_touchid.touchid
-which does the binding when you call it.
-So, use
-
-```OCaml
-let on_device_ready _ =
-  let t = Cordova_touchid.t () in
-  (* Some code *)
-
-let _ =
-  Dom.addEventListener Dom_html.document (Dom.Event.make "deviceready")
-  (Dom_html.handler on_device_ready) Js._false
-```
